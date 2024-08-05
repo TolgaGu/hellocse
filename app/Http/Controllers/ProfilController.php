@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateProfilRequest;
 use App\Models\Profil;
-use Illuminate\Http\Request;
 
 class ProfilController extends Controller
 {
     public function index()
     {
         $profils = Profil::where('statut', 'actif')->get(['id', 'nom', 'prenom', 'image']);
+
         return response()->json($profils);
     }
 

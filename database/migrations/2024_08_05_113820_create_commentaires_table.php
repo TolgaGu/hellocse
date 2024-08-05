@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('profil_id');
             $table->text('contenu');
             $table->timestamps();
-    
+
             $table->foreign('administrateur_id')->references('id')->on('administrateurs')->onDelete('cascade');
             $table->foreign('profil_id')->references('id')->on('profils')->onDelete('cascade');
         });

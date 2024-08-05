@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Administrateur;
 use App\Models\Commentaire;
 use App\Models\Profil;
-use App\Models\Administrateur;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -12,8 +12,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CommentaireFactory extends Factory
 {
-
     protected $model = Commentaire::class;
+
     /**
      * Define the model's default state.
      *

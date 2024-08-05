@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('image');
             $table->enum('statut', ['inactif', 'en attente', 'actif']);
             $table->timestamps();
-    
+
             $table->foreign('administrateur_id')->references('id')->on('administrateurs')->onDelete('cascade');
         });
     }

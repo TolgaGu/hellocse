@@ -5,7 +5,6 @@ namespace Tests\Feature;
 use App\Models\Administrateur;
 use App\Models\Profil;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class CommentaireTest extends TestCase

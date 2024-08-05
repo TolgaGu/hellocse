@@ -18,7 +18,7 @@ class CommentaireController extends Controller
             return response()->json(['message' => 'Vous avez déjà commenté ce profil.'], 400);
         }
 
-        $commentaire = new Commentaire();
+        $commentaire = new Commentaire;
         $commentaire->contenu = $request->contenu;
         $commentaire->profil_id = $profil->id;
         $commentaire->administrateur_id = $administrateur->id;

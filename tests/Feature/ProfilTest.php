@@ -5,7 +5,6 @@ namespace Tests\Feature;
 use App\Models\Administrateur;
 use App\Models\Profil;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ProfilTest extends TestCase
@@ -31,7 +30,7 @@ class ProfilTest extends TestCase
 
         $profil = Profil::factory()->create();
 
-        $response = $this->putJson('/api/profils/' . $profil->id, [
+        $response = $this->putJson('/api/profils/'.$profil->id, [
             'nom' => 'Michel Michel',
         ]);
 
@@ -48,7 +47,7 @@ class ProfilTest extends TestCase
 
         $profil = Profil::factory()->create();
 
-        $response = $this->deleteJson('/api/profils/' . $profil->id);
+        $response = $this->deleteJson('/api/profils/'.$profil->id);
 
         $response->assertStatus(200);
         $this->assertDatabaseMissing('profils', [
