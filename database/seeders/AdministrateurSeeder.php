@@ -14,7 +14,7 @@ class AdministrateurSeeder extends Seeder
      */
     public function run(): void
     {
-     
+
         Administrateur::create([
             'name' => 'Michel Michel',
             'email' => 'test@admin.fr',

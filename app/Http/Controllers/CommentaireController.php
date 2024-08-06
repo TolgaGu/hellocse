@@ -40,5 +40,4 @@ class CommentaireController extends Controller
 
         return response()->json(['message' => 'Commentaire supprimé avec succès.'], 200);
     }
-    
 }

@@ -7,8 +7,6 @@ parameters:
         - app
         - database
         - routes
-    ignoreErrors:
-        - '#Undefined variable: \$this#'
     excludePaths:
         - */tests/*
         - */database/*

@@ -10,15 +10,16 @@ class ProfilController extends Controller
 {
     public function index()
     {
+        //$profils = Profil::where('statut', 'actif')->with('commentaires')->get(['id', 'nom', 'prenom', 'image']);
 
-        return response()->json(Auth::user());
-        // Vérifier si l'utilisateur est authentifié
-        /* if (Auth::check())
-            $profils = Profil::where('statut', 'actif')->with('commentaires')->get(['id', 'nom', 'prenom', 'image','statut']);
-        else
+        if (Auth::check()) {
+            // Utilisateur authentifié
+            $profils = Profil::with('commentaires')->get(['id', 'nom', 'prenom', 'image', 'statut']);
+        } else {
+            // Utilisateur non authentifié, afficher les statut 'actif' uniquement
             $profils = Profil::where('statut', 'actif')->with('commentaires')->get(['id', 'nom', 'prenom', 'image']);
-*/
-        $profils = Profil::where('statut', 'actif')->with('commentaires')->get(['id', 'nom', 'prenom', 'image']);
+        }
+
         return response()->json($profils);
     }
 
