@@ -26,4 +26,19 @@ class CommentaireController extends Controller
 
         return response()->json($commentaire, 201);
     }
+
+    public function destroy($id)
+    {
+        $commentaire = Commentaire::findOrFail($id);
+
+        // Vérifier si l'utilisateur authentifié est l'auteur du commentaire
+        if ($commentaire->administrateur_id !== Auth::id()) {
+            return response()->json(['message' => 'Unauthorized'], 403);
+        }
+
+        $commentaire->delete();
+
+        return response()->json(['message' => 'Commentaire supprimé avec succès.'], 200);
+    }
+    
 }

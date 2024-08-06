@@ -79,3 +79,10 @@ Modifier un profil (protégé) : PUT /api/profils/{id}
 Supprimer un profil (protégé) : DELETE /api/profils/{id}
 
     Header : Authorization: Bearer {token}
+
+## Commentaires
+Ajouter un commentaire sur un profil (protégé) : POST /api/commentaires
+
+    Header : Authorization: Bearer {token}
+    Paramètres : profil_id, contenu
+    Note : Un administrateur ne peut poster qu'un seul commentaire par profil.

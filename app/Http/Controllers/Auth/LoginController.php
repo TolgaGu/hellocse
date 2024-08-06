@@ -29,4 +29,10 @@ class LoginController extends Controller
         $token->delete(); 
         return response()->json(['message' => 'Logged out'], 200);
     }
+
+    public function me()
+    {
+        return response()->json('( ͡⚆ ͜ʖ ͡⚆) 🚫', 403);
+    }
+    
 }

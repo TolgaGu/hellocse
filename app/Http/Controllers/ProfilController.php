@@ -4,13 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateProfilRequest;
 use App\Models\Profil;
+use Illuminate\Support\Facades\Auth;
 
 class ProfilController extends Controller
 {
     public function index()
     {
-        $profils = Profil::where('statut', 'actif')->get(['id', 'nom', 'prenom', 'image']);
 
+        return response()->json(Auth::user());
+        // Vérifier si l'utilisateur est authentifié
+        /* if (Auth::check())
+            $profils = Profil::where('statut', 'actif')->with('commentaires')->get(['id', 'nom', 'prenom', 'image','statut']);
+        else
+            $profils = Profil::where('statut', 'actif')->with('commentaires')->get(['id', 'nom', 'prenom', 'image']);
+*/
+        $profils = Profil::where('statut', 'actif')->with('commentaires')->get(['id', 'nom', 'prenom', 'image']);
         return response()->json($profils);
     }
 

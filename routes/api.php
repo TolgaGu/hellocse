@@ -26,8 +26,12 @@ Route::middleware('auth:sanctum')->post('/logout', [LoginController::class, 'log
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/commentaires', [CommentaireController::class, 'store']);
+    Route::delete('/commentaires/{id}', [CommentaireController::class, 'destroy']);
     Route::put('/profils/{id}', [ProfilController::class, 'update']);
     Route::delete('/profils/{id}', [ProfilController::class, 'destroy']);
 });
 
 Route::get('/profils', [ProfilController::class, 'index']);
+
+
+Route::any('/forbidden', [LoginController::class, 'me'])->name('forbidden');
