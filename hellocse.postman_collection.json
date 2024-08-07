@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "b6159c3d-8413-4399-bc50-c85ccd887daa",
+		"name": "hellocse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4707296"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"test@admin.fr\",\n  \"password\": \"password\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 3|zX7wR0BMkHNo0mK19RUz2NBuBa2xmj7RsXQEWY0r402afcad",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profils",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "eyJpdiI6IitFQ3FSZEtIY24xN3Foa0gvL0JBcmc9PSIsInZhbHVlIjoiMXBya0hTSkpzQUxKK2dnL1cxY0xkc2FqM1c5bEdmN0JzMWsvWTRmWXFsSjAzcG5iR2R1bWNPWDFra2o2TWMxMjdXT2tibGsrOUVJTzlXdTNMRUViNEdUbWVmMW8rVDA4dkp6Y3dFREFqSGhYY0dPOXdmTU5KTm9rNVdCdFR2bUEiLCJtYWMiOiJkZDdkZTk0MWM0NzRiMTJiOWY1MDlhMjA4YTU0YWU1MDdjZGNjNWRkNDIxZDcwYzFiNTk2ZjVhNjY3NmMxMjYxIiwidGFnIjoiIn0%3D;",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profils",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profils"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profils logged in",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|UjFmDjphmrFGis53yL0eH499vujEn9eX11Tk6aXm7e1b8509",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profils",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profils"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profils",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|UjFmDjphmrFGis53yL0eH499vujEn9eX11Tk6aXm7e1b8509",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nom\": \"Michel\",\n  \"prenom\": \"Michel\",\n  \"image\": \"https://fastly.picsum.photos/id/88/200/300.jpg?hmac=JmiMN7iyW4Saka82S4HzDvbOjMSB2k9NwTN29MHWqa4\",\n  \"statut\": \"actif\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profils/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profils",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profils",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|UjFmDjphmrFGis53yL0eH499vujEn9eX11Tk6aXm7e1b8509",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profils/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profils",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "commentaires",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|UjFmDjphmrFGis53yL0eH499vujEn9eX11Tk6aXm7e1b8509",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"profil_id\": 6,\n  \"contenu\": \"Ceci est un commentaire de test.\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/commentaires",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"commentaires"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "commentaire",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|UjFmDjphmrFGis53yL0eH499vujEn9eX11Tk6aXm7e1b8509",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/commentaires/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"commentaires",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
